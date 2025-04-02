@@ -13,6 +13,10 @@ const slackApp = new App({
     signingSecret: process.env.SLACK_SIGNING_SECRET
 });
 
+app.get("/", (req, res) => {
+    res.send("Hello, World!");
+  });
+
 // Slash Command Handler
 app.post('/slack/approval-test', async (req, res) => {
     const triggerId = req.body.trigger_id;
